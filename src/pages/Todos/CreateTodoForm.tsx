@@ -10,14 +10,25 @@ import { toast } from 'react-toastify';
 export default function CreateTodoForm() {
   const dispatch = useDispatch();
 
+  // initial form
   const initialTodoForm: TodoType = {
     id: randomNumberHelper(),
     title: '',
   };
 
+  // states
   const [todoForm, setTodoForm] = useState(initialTodoForm);
   const [loading, setLoading] = useState(false);
 
+  // handle form change
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setTodoForm((prev) => ({
+      ...prev,
+      title: e.target.value,
+    }));
+  }
+
+  // submit function
   async function submitTodo(e: React.FormEvent, todoData: RootState) {
     e.preventDefault();
     setLoading(true);
@@ -30,13 +41,6 @@ export default function CreateTodoForm() {
     } finally {
       setLoading(false);
     }
-  }
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setTodoForm((prev) => ({
-      ...prev,
-      title: e.target.value,
-    }));
   }
 
   return (

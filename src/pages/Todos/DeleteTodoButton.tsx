@@ -5,6 +5,7 @@ type DeleteTodoButtonPropsType = {
 };
 
 export default function DeleteTodoButton({ id }: DeleteTodoButtonPropsType) {
+  // custom hook
   const { loading, deleteTodoAction } = useDeleteTodo();
 
   return (
