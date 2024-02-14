@@ -21,7 +21,7 @@ export const getAllTodos = async () => {
 };
 
 // Create a new todo
-export const createPost = async (todoData: any) => {
+export const createTodo = async (todoData: any) => {
   try {
     const response = await todosApi.post('/', todoData);
     return response.data;
