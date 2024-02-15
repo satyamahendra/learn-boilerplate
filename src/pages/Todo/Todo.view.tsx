@@ -1,14 +1,8 @@
 import CreateTodoForm from './CreateTodoForm';
-import { TodoType } from './Todo.type';
+import { TodoViewProps } from './Todo.type';
 import TodosList from './TodoList';
 
-type TodosViewPropsType = {
-  todos: TodoType[];
-  loading: boolean;
-  error: any;
-};
-
-const TodoView = ({ todos, loading, error }: TodosViewPropsType) => (
+const TodoView = ({ todos, loading, error }: TodoViewProps) => (
   <main className="flex justify-center h-screen">
     <div className="w-full max-w-xl p-4 bg-gray-100 rounded-b-xl">
       <CreateTodoForm />

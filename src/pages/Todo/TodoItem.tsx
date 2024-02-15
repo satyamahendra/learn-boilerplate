@@ -1,11 +1,7 @@
 import DeleteTodoButton from './DeleteTodoButton';
-import { TodoType } from './Todo.type';
+import { TodoItemProps } from './Todo.type';
 
-interface TodoItem {
-  todo: TodoType;
-}
-
-const TodoItem = ({ todo }: TodoItem) => (
+const TodoItem = ({ todo }: TodoItemProps) => (
   <li className="flex items-center justify-between py-2 pl-4 pr-2 bg-white rounded-xl">
     {todo.title}
     <DeleteTodoButton id={todo.id} />
