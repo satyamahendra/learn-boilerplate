@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { TodoType } from '@/pages/Todos/Todo.type';
+import { TodoType } from '@/pages/Todo/Todo.type';
 
 type initialStateType = {
   todos: TodoType[];

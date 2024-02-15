@@ -7,7 +7,7 @@ import { createTodo as createTodoRedux } from '@/dataservices/slice/todosSlice';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 
-export default function CreateTodoForm() {
+const CreateTodoForm = () => {
   const dispatch = useDispatch();
 
   // initial form
@@ -63,4 +63,6 @@ export default function CreateTodoForm() {
       </button>
     </form>
   );
-}
+};
+
+export default CreateTodoForm;
