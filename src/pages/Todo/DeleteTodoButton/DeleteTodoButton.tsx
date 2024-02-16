@@ -1,14 +1,14 @@
-import { useDeleteTodo } from '@/helpers/useDeleteTodo';
 import DeleteTodoButtonView from './DeleteTodoButton.view';
 import { DeleteTodoButtonProps } from './DeleteTodoButton.type';
+import { useDeleteTodoMutation } from '@/dataservices/api/todoApi';
 
 const DeleteTodoButton = ({ id }: DeleteTodoButtonProps) => {
-  const { loading, deleteTodoAction } = useDeleteTodo();
+  const [deleteTodo, { isLoading }] = useDeleteTodoMutation();
 
   return (
     <DeleteTodoButtonView
-      deleteTodoAction={deleteTodoAction}
-      loading={loading}
+      deleteTodo={deleteTodo}
+      isLoading={isLoading}
       id={id}
     />
   );

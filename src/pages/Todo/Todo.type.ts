@@ -4,9 +4,10 @@ export interface Todo {
 }
 
 export type TodoViewProps = {
-  todos: Todo[];
-  loading: boolean;
+  todos: Todo[] | undefined;
+  isLoading: boolean;
   error: any;
+  isSuccess: boolean;
 };
 
 export interface TodoItemProps {
@@ -14,5 +15,5 @@ export interface TodoItemProps {
 }
 
 export interface TodosListPropsType {
-  todos: Todo[];
+  todos: Todo[] | undefined;
 }

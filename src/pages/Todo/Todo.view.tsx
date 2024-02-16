@@ -2,29 +2,16 @@ import CreateTodoForm from './CreateTodoForm';
 import { TodoViewProps } from './Todo.type';
 import TodosList from './TodoList';
 
-const TodoView = ({ todos, loading, error }: TodoViewProps) => (
+const TodoView = ({ todos, isLoading, error, isSuccess }: TodoViewProps) => (
   <main className="flex justify-center h-screen">
     <div className="w-full max-w-xl p-4 bg-gray-100 rounded-b-xl">
       {/* create todoform hrerhehr */}
       <CreateTodoForm />
 
-      {/* loading */}
-      {loading && (
-        <div className="mt-8 text-center text-gray-400">Loadig...</div>
-      )}
+      {isLoading && <div>loading</div>}
+      {error && <div>something went wrong</div>}
 
-      {/* error */}
-      {error && <div className="mt-8 text-center text-gray-400">{error}</div>}
-
-      {/* empty todos */}
-      {todos.length < 1 && !error && !loading && (
-        <div className="mt-8 text-center text-gray-400">
-          Theres nothing here
-        </div>
-      )}
-
-      {/* todos */}
-      {todos.length > 0 && !error && !loading && <TodosList todos={todos} />}
+      {isSuccess && <TodosList todos={todos} />}
     </div>
   </main>
 );

@@ -1,15 +1,17 @@
-import { RootState } from '@/init/store/store';
 import TodoView from './Todo.view';
-import { useSelector } from 'react-redux';
-
-import { useFetchTodos } from '@/helpers/useFetchTodos';
+import { useGetTodosQuery } from '@/dataservices/api/todoApi';
 
 const Todo = () => {
-  const { loading, error } = useFetchTodos();
+  const { data: todos, isLoading, isSuccess, error } = useGetTodosQuery();
 
-  const todos = useSelector((state: RootState) => state.todos.todos);
-
-  return <TodoView todos={todos} loading={loading} error={error} />;
+  return (
+    <TodoView
+      todos={todos}
+      isLoading={isLoading}
+      error={error}
+      isSuccess={isSuccess}
+    />
+  );
 };
 
 export default Todo;

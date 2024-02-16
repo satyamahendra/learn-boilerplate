@@ -1,7 +1,7 @@
 export interface DeleteTodoButtonViewProps {
   id: any;
-  loading: any;
-  deleteTodoAction: any;
+  isLoading: any;
+  deleteTodo: any;
 }
 
 export interface DeleteTodoButtonProps {
