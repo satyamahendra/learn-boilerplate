@@ -1,16 +1,19 @@
 import CreateTodoForm from './CreateTodoForm';
 import { TodoViewProps } from './Todo.type';
-import TodosList from './TodoList';
+import TodoList from './TodoList';
 
 const TodoView = ({ todos, isLoading, error, isSuccess }: TodoViewProps) => (
   <main className="flex justify-center h-screen">
     <div className="w-full max-w-xl p-4 bg-gray-100 rounded-b-xl">
       <CreateTodoForm />
 
-      {isLoading && <div>loading</div>}
-      {error && <div>something went wrong</div>}
+      {isLoading && <div className="w-full mt-24 text-center">loading</div>}
 
-      {isSuccess && <TodosList todos={todos} />}
+      {error && (
+        <div className="w-full mt-24 text-center">something went wrong</div>
+      )}
+
+      {isSuccess && <TodoList todos={todos} />}
     </div>
   </main>
 );

@@ -1,3 +1,6 @@
+import { SerializedError } from '@reduxjs/toolkit';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+
 export interface Todo {
   id: string;
   title: string;
@@ -6,14 +9,10 @@ export interface Todo {
 export type TodoViewProps = {
   todos: Todo[] | undefined;
   isLoading: boolean;
-  error: Error | null;
+  error: FetchBaseQueryError | SerializedError | undefined;
   isSuccess: boolean;
 };
 
 export interface TodoItemProps {
   todo: Todo;
-}
-
-export interface TodosListPropsType {
-  todos: Todo[] | undefined;
 }
