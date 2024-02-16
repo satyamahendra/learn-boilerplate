@@ -1,6 +1,9 @@
+import { useCreateTodoMutation } from '@/dataservices/api/todoApi';
+import { Todo } from '../Todo.type';
+
 export interface CreateTodoFormViewProps {
-  todoForm: any;
-  handleChange: any;
-  isLoading: any;
-  createTodo: any;
+  todoForm: Todo;
+  handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  isLoading: boolean;
+  createTodo: ReturnType<typeof useCreateTodoMutation>[0];
 }

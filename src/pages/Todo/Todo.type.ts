@@ -6,7 +6,7 @@ export interface Todo {
 export type TodoViewProps = {
   todos: Todo[] | undefined;
   isLoading: boolean;
-  error: any;
+  error: Error | null;
   isSuccess: boolean;
 };
 
