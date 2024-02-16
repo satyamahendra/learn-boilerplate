@@ -37,34 +37,3 @@ const CreateTodoForm = () => {
 };
 
 export default CreateTodoForm;
-
-// const dispatch = useDispatch();
-
-// const initialTodoForm: Todo = {
-//   id: randomNumberHelper(),
-//   title: '',
-// };
-
-// const [todoForm, setTodoForm] = useState(initialTodoForm);
-// const [loading, setLoading] = useState(false);
-
-// function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-//   setTodoForm((prev) => ({
-//     ...prev,
-//     title: e.target.value,
-//   }));
-// }
-
-// async function submitTodo(e: React.FormEvent, todoData: RootState) {
-//   e.preventDefault();
-//   setLoading(true);
-//   try {
-//     await createTodo(todoData);
-//     dispatch(createTodoRedux(todoData));
-//     setTodoForm({ ...initialTodoForm, id: randomNumberHelper() });
-//   } catch (error: any) {
-//     toast(error.message);
-//   } finally {
-//     setLoading(false);
-//   }
-// }

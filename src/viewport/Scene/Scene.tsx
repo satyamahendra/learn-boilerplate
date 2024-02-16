@@ -1,9 +1,9 @@
 import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import RouteLogger from './RouteLogger';
-import Todos from '@/pages/Todo';
-import About from '@/pages/About';
+
 import Layout from '@/layouts/Layout';
+import { publicRoutes } from './routing.item';
 
 const Scene = () => (
   <Suspense>
@@ -11,8 +11,13 @@ const Scene = () => (
       <RouteLogger>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Todos />} />
-            <Route path="about" element={<About />} />
+            {publicRoutes.map((route) => (
+              <Route
+                path={route.path}
+                element={route.element}
+                key={route.path}
+              ></Route>
+            ))}
           </Route>
         </Routes>
       </RouteLogger>
