@@ -17,7 +17,7 @@ const persistConfig: PersistConfig<any> = {
 };
 
 const store = configureStore({
-  reducer: persistReducer(persistConfig, rootReducer),
+  reducer: persistReducer<any, any>(persistConfig, rootReducer),
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
