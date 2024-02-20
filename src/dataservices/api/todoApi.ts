@@ -1,7 +1,8 @@
 import { Todo } from '@/pages/Todo/Todo.type';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const BASE_URL = 'http://localhost:4000/';
+// const BASE_URL = 'http://localhost:4000/';
+const BASE_URL = 'http://192.168.1.5:4000/';
 
 export const todosApi = createApi({
   reducerPath: 'todosApi',

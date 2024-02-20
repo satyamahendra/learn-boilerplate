@@ -17,7 +17,10 @@ const persistConfig: PersistConfig<any> = {
 };
 
 const store = configureStore({
-  reducer: persistReducer<any, any>(persistConfig, rootReducer),
+  // [!] persist bikin redux ambil data dari state yangn udah disimpan
+  // reducer: persistReducer<any, any>(persistConfig, rootReducer),
+
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
